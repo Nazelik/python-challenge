@@ -13,6 +13,9 @@ last_profit = 0
 # average of changes of profit/losses
 average_change = 0
 
+# store csv file header
+header = ""
+
 # greatest increase in profits
 max = 0
 
@@ -43,7 +46,7 @@ output_path = os.path.join(".", "analysis", "output.txt")
 with open(budget_csv) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=",")
     # skip the header
-    next(csv_file)
+    header = next(csv_file)
 
     # Read through each row of data after the header
     for row in csv_reader:

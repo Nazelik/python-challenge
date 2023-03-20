@@ -7,6 +7,9 @@ total_votes = 0
 # total number of votes for each candidate
 candidate_info = {}
 
+# store csv file header
+header = ""
+
 # max value (max votes) of 'candidate_info' dictionary
 max = 0
 
@@ -30,7 +33,7 @@ output_path = os.path.join(".", "analysis", "output.txt")
 with open(budget_csv) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=",")
     # skip the header
-    next(csv_file)
+    header = next(csv_file)
 
     # Read through each row of data after the header
     for row in csv_reader:
